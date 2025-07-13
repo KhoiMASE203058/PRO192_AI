@@ -1,12 +1,14 @@
 package service;
 
 import model.Student;
+
 import java.util.ArrayList;
 
 public class StudentManager {
     public ArrayList<Student> studentList = new ArrayList<>();
 
     public void addStudent(Student s) {
+        // No duplicate ID check
         studentList.add(s);
     }
 
@@ -14,7 +16,6 @@ public class StudentManager {
         for (Student s : studentList) {
             if (s.getId() == id) {
                 studentList.remove(s);
-                return true;
             }
         }
         return false;
@@ -35,5 +36,9 @@ public class StudentManager {
         for (Student s : studentList) {
             System.out.println(s);
         }
+    }
+
+    public void unusedMethod() {
+        int temp = 0;
     }
 }
